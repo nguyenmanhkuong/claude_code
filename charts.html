@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banking Quarterly Report Q1/2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/recharts@2.15.0/umd/Recharts.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#090A14',
+            primary: '#DF6B33',
+            primaryHover: '#c25b28',
+            card: '#12131F',
+            border: '#1E2030',
+            muted: '#6B7280',
+            success: '#22C55E',
+            warning: '#F59E0B',
+            danger: '#EF4444',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #090A14; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #090A14; }
+    ::-webkit-scrollbar-thumb { background: #1E2030; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #2a2d3e; }
+  </style>
+</head>
+<body class="min-h-screen bg-bg font-inter text-gray-200">
+
+  <!-- Header -->
+  <header class="border-b border-border bg-card/80 backdrop-blur-sm sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10">
+          <i data-lucide="bar-chart-3" class="w-5 h-5 text-primary"></i>
+        </div>
+        <div>
+          <h1 class="font-poppins font-bold text-white text-lg leading-tight">Banking Quarterly Report</h1>
+          <p class="text-muted text-xs">Q1/2026 — January to March</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <select class="bg-bg border border-border rounded-lg px-3 py-2 text-sm text-gray-200 focus:outline-none focus:border-primary cursor-pointer">
+          <option>Q1/2026</option>
+          <option>Q4/2025</option>
+          <option>Q3/2025</option>
+          <option>Q2/2025</option>
+        </select>
+        <button class="flex items-center gap-2 bg-primary hover:bg-primaryHover text-white text-sm px-4 py-2 rounded-lg transition-colors cursor-pointer">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          <span class="hidden sm:inline">Export</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-6 space-y-6">
+
+    <!-- KPI Cards -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-card border border-border rounded-2xl p-5">
+        <div class="flex items-center justify-between mb-3">
+          <span class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+            <i data-lucide="trending-up" class="w-5 h-5 text-primary"></i>
+          </span>
+          <span class="text-xs font-medium px-2 py-1 rounded-full bg-success/10 text-success">+22.2%</span>
+        </div>
+        <p class="text-muted text-xs mb-1">Total Revenue</p>
+        <p class="font-poppins font-bold text-2xl text-white">495.0B</p>
+        <p class="text-muted text-xs mt-1">vs 405.0B in Q1/2025</p>
+      </div>
+      <div class="bg-card border border-border rounded-2xl p-5">
+        <div class="flex items-center justify-between mb-3">
+          <span class="w-10 h-10 rounded-xl bg-success/10 flex items-center justify-center">
+            <i data-lucide="landmark" class="w-5 h-5 text-success"></i>
+          </span>
+          <span class="text-xs font-medium px-2 py-1 rounded-full bg-success/10 text-success">+36.1%</span>
+        </div>
+        <p class="text-muted text-xs mb-1">Net Profit</p>
+        <p class="font-poppins font-bold text-2xl text-white">245.0B</p>
+        <p class="text-muted text-xs mt-1">vs 180.0B in Q1/2025</p>
+      </div>
+      <div class="bg-card border border-border rounded-2xl p-5">
+        <div class="flex items-center justify-between mb-3">
+          <span class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
+            <i data-lucide="users" class="w-5 h-5 text-blue-400"></i>
+          </span>
+          <span class="text-xs font-medium px-2 py-1 rounded-full bg-success/10 text-success">+8.5%</span>
+        </div>
+        <p class="text-muted text-xs mb-1">Total Customers</p>
+        <p class="font-poppins font-bold text-2xl text-white">4.28M</p>
+        <p class="text-muted text-xs mt-1">vs 3.95M in Q1/2025</p>
+      </div>
+      <div class="bg-card border border-border rounded-2xl p-5">
+        <div class="flex items-center justify-between mb-3">
+          <span class="w-10 h-10 rounded-xl bg-warning/10 flex items-center justify-center">
+            <i data-lucide="shield-alert" class="w-5 h-5 text-warning"></i>
+          </span>
+          <span class="text-xs font-medium px-2 py-1 rounded-full bg-warning/10 text-warning">+0.3%</span>
+        </div>
+        <p class="text-muted text-xs mb-1">NPL Ratio</p>
+        <p class="font-poppins font-bold text-2xl text-white">2.1%</p>
+        <p class="text-muted text-xs mt-1">vs 1.8% in Q1/2025</p>
+      </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+      <!-- Revenue Chart -->
+      <div class="bg-card border border-border rounded-2xl p-5 sm:p-6">
+        <div class="flex items-center justify-between mb-5">
+          <div>
+            <h2 class="font-poppins font-bold text-white text-base">Revenue Overview</h2>
+            <p class="text-muted text-xs mt-0.5">Monthly comparison Q1/2025 vs Q1/2026 (Billion VND)</p>
+          </div>
+          <div class="flex items-center gap-4 text-xs">
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-primary"></span>2026</span>
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-muted/40"></span>2025</span>
+          </div>
+        </div>
+        <div id="chart-revenue" class="h-64"></div>
+      </div>
+
+      <!-- Business Results Chart -->
+      <div class="bg-card border border-border rounded-2xl p-5 sm:p-6">
+        <div class="flex items-center justify-between mb-5">
+          <div>
+            <h2 class="font-poppins font-bold text-white text-base">Business Results</h2>
+            <p class="text-muted text-xs mt-0.5">Key financial metrics comparison (Billion VND)</p>
+          </div>
+          <div class="flex items-center gap-4 text-xs">
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-primary"></span>2026</span>
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-muted/40"></span>2025</span>
+          </div>
+        </div>
+        <div id="chart-business" class="h-64"></div>
+      </div>
+    </div>
+
+    <!-- Data Tables Row -->
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+
+      <!-- Revenue Table -->
+      <div class="bg-card border border-border rounded-2xl overflow-hidden">
+        <div class="px-5 py-4 border-b border-border">
+          <h2 class="font-poppins font-bold text-white text-base">Revenue Details</h2>
+          <p class="text-muted text-xs mt-0.5">Monthly breakdown Q1/2026 vs Q1/2025 (Billion VND)</p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-border">
+                <th class="text-left px-5 py-3 text-xs font-medium text-muted uppercase tracking-wider">Month</th>
+                <th class="text-right px-4 py-3 text-xs font-medium text-muted uppercase tracking-wider">Q1/2025</th>
+                <th class="text-right px-4 py-3 text-xs font-medium text-muted uppercase tracking-wider">Q1/2026</th>
+                <th class="text-right px-4 py-3 text-xs font-medium text-muted uppercase tracking-wider">Change</th>
+                <th class="text-right px-5 py-3 text-xs font-medium text-muted uppercase tracking-wider">Trend</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-border">
+              <tr class="hover:bg-white/[0.02] transition-colors">
+                <td class="px-5 py-3 font-medium text-gray-200">January</td>
+                <td class="text-right px-4 py-3 text-gray-400">125.0</td>
+                <td class="text-right px-4 py-3 text-white font-medium">152.0</td>
+                <td class="text-right px-4 py-3 text-success font-medium">+21.6%</td>
+                <td class="text-right px-5 py-3"><i data-lucide="trending-up" class="w-4 h-4 text-success inline"></i></td>
+              </tr>
+              <tr class="hover:bg-white/[0.02] transition-colors">
+                <td class="px-5 py-3 font-medium text-gray-200">February</td>
+                <td class="text-right px-4 py-3 text-gray-400">138.0</td>
+                <td class="text-right px-4 py-3 text-white font-medium">168.0</td>
+                <td class="text-right px-4 py-3 text-success font-medium">+21.7%</td>
+                <td class="text-right px-5 py-3"><i data-lucide="trending-up" class="w-4 h-4 text-success inline"></i></td>
+              </tr>
+              <tr class="hover:bg-white/[0.02] transition-colors">
+                <td class="px-5 py-3 font-medium text-gray-200">March</td>
+                <td class="text-right px-4 py-3 text-gray-400">142.0</td>
+                <td class="text-right px-4 py-3 text-white font-medium">175.0</td>
+                <td class="text-right px-4 py-3 text-success font-medium">+23.2%</td>
+                <td class="text-right px-5 py-3"><i data-lucide="trending-up" class="w-4 h-4 text-success inline"></i></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr class="border-t-2 border-border bg-primary/5">
+                <td class="px-5 py-3 font-poppins font-bold text-white">Total Q1</td>
+                <td class="text-right px-4 py-3 font-medium text-gray-300">405.0</td>
+                <td class="text-right px-4 py-3 font-poppins font-bold text-primary text-base">495.0</td>
+                <td class="text-right px-4 py-3 font-bold text-success">+22.2%</td>
+                <td class="px-5 py-3"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+      <!-- Marketing Table -->
+      <div class="bg-card border border-border rounded-2xl overflow-hidden">
+        <div class="px-5 py-4 border-b border-border">
+          <h2 class="font-poppins font-bold text-white text-base">Marketing Metrics</h2>
+          <p class="text-muted text-xs mt-0.5">Campaign performance Q1/2026 vs Q1/2025</p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-border">
+                <th class="text-left px-5 py-3 text-xs font-medium text-muted uppercase tracking-wider">Channel</th>
+                <th class="text-right px-4 py-3 text-xs font-medium text-muted uppercase tracking-wider">Reach 2025</th>
+                <th class="text-right px-4 py-3 text-xs font-medium text-muted uppercase tracking-wider">Reach 2026</th>
+                <th class="text-right px-4 py-3 text-xs font-medium text-muted uppercase tracking-wider">Conv. Rate</th>
+                <th class="text-right px-5 py-3 text-xs font-medium text-muted uppercase tracking-wider">ROI</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-border">
+              <tr class="hover:bg-white/[0.02] transition-colors">
+                <td class="px-5 py-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0"><i data-lucide="monitor" class="w-3.5 h-3.5 text-blue-400"></i></span>
+                    <span class="font-medium text-gray-200">Digital Ads</span>
+                  </div>
+                </td>
+                <td class="text-right px-4 py-3 text-gray-400">38.2M</td>
+                <td class="text-right px-4 py-3 text-white font-medium">45.0M</td>
+                <td class="text-right px-4 py-3 text-success font-medium">3.2%</td>
+                <td class="text-right px-5 py-3 text-success font-medium">4.8x</td>
+              </tr>
+              <tr class="hover:bg-white/[0.02] transition-colors">
+                <td class="px-5 py-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center shrink-0"><i data-lucide="building" class="w-3.5 h-3.5 text-primary"></i></span>
+                    <span class="font-medium text-gray-200">Branch Promo</span>
+                  </div>
+                </td>
+                <td class="text-right px-4 py-3 text-gray-400">22.5M</td>
+                <td class="text-right px-4 py-3 text-white font-medium">28.0M</td>
+                <td class="text-right px-4 py-3 text-warning font-medium">1.8%</td>
+                <td class="text-right px-5 py-3 text-warning font-medium">2.1x</td>
+              </tr>
+              <tr class="hover:bg-white/[0.02] transition-colors">
+                <td class="px-5 py-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-pink-500/10 flex items-center justify-center shrink-0"><i data-lucide="smartphone" class="w-3.5 h-3.5 text-pink-400"></i></span>
+                    <span class="font-medium text-gray-200">Social Media</span>
+                  </div>
+                </td>
+                <td class="text-right px-4 py-3 text-gray-400">1.8M</td>
+                <td class="text-right px-4 py-3 text-white font-medium">2.1M</td>
+                <td class="text-right px-4 py-3 text-success font-medium">4.5%</td>
+                <td class="text-right px-5 py-3 text-success font-medium">6.2x</td>
+              </tr>
+              <tr class="hover:bg-white/[0.02] transition-colors">
+                <td class="px-5 py-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-purple-500/10 flex items-center justify-center shrink-0"><i data-lucide="mail" class="w-3.5 h-3.5 text-purple-400"></i></span>
+                    <span class="font-medium text-gray-200">Email Campaign</span>
+                  </div>
+                </td>
+                <td class="text-right px-4 py-3 text-gray-400">5.6M</td>
+                <td class="text-right px-4 py-3 text-white font-medium">7.2M</td>
+                <td class="text-right px-4 py-3 text-success font-medium">5.8%</td>
+                <td class="text-right px-5 py-3 text-success font-medium">8.4x</td>
+              </tr>
+              <tr class="hover:bg-white/[0.02] transition-colors">
+                <td class="px-5 py-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-warning/10 flex items-center justify-center shrink-0"><i data-lucide="radio" class="w-3.5 h-3.5 text-warning"></i></span>
+                    <span class="font-medium text-gray-200">ATM / POS</span>
+                  </div>
+                </td>
+                <td class="text-right px-4 py-3 text-gray-400">—</td>
+                <td class="text-right px-4 py-3 text-white font-medium">12.4M</td>
+                <td class="text-right px-4 py-3 text-muted font-medium">—</td>
+                <td class="text-right px-5 py-3 text-muted font-medium">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Financial Statement Table -->
+    <div class="bg-card border border-border rounded-2xl overflow-hidden">
+      <div class="px-5 py-4 border-b border-border">
+        <h2 class="font-poppins font-bold text-white text-base">Financial Statement Summary</h2>
+        <p class="text-muted text-xs mt-0.5">Quarterly comparison Q1/2025 vs Q1/2026 (Billion VND)</p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-border">
+              <th class="text-left px-5 py-3 text-xs font-medium text-muted uppercase tracking-wider">Metric</th>
+              <th class="text-right px-4 py-3 text-xs font-medium text-muted uppercase tracking-wider">Q1/2025</th>
+              <th class="text-right px-4 py-3 text-xs font-medium text-muted uppercase tracking-wider">Q1/2026</th>
+              <th class="text-right px-4 py-3 text-xs font-medium text-muted uppercase tracking-wider">Change</th>
+              <th class="text-right px-5 py-3 text-xs font-medium text-muted uppercase tracking-wider">YoY %</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr class="hover:bg-white/[0.02] transition-colors">
+              <td class="px-5 py-3 text-gray-300">Net Interest Income</td>
+              <td class="text-right px-4 py-3 text-gray-400">320.0</td>
+              <td class="text-right px-4 py-3 text-white font-medium">395.0</td>
+              <td class="text-right px-4 py-3 text-success font-medium">+75.0</td>
+              <td class="text-right px-5 py-3 text-success font-medium">+23.4%</td>
+            </tr>
+            <tr class="hover:bg-white/[0.02] transition-colors">
+              <td class="px-5 py-3 text-gray-300">Non-Interest Income</td>
+              <td class="text-right px-4 py-3 text-gray-400">85.0</td>
+              <td class="text-right px-4 py-3 text-white font-medium">100.0</td>
+              <td class="text-right px-4 py-3 text-success font-medium">+15.0</td>
+              <td class="text-right px-5 py-3 text-success font-medium">+17.6%</td>
+            </tr>
+            <tr class="hover:bg-white/[0.02] transition-colors">
+              <td class="px-5 py-3 text-gray-300">Total Operating Income</td>
+              <td class="text-right px-4 py-3 text-gray-400">405.0</td>
+              <td class="text-right px-4 py-3 text-white font-medium">495.0</td>
+              <td class="text-right px-4 py-3 text-success font-medium">+90.0</td>
+              <td class="text-right px-5 py-3 text-success font-medium">+22.2%</td>
+            </tr>
+            <tr class="hover:bg-white/[0.02] transition-colors">
+              <td class="px-5 py-3 text-gray-300">Operating Expenses</td>
+              <td class="text-right px-4 py-3 text-gray-400">180.0</td>
+              <td class="text-right px-4 py-3 text-white font-medium">195.0</td>
+              <td class="text-right px-4 py-3 text-danger font-medium">+15.0</td>
+              <td class="text-right px-5 py-3 text-danger font-medium">+8.3%</td>
+            </tr>
+            <tr class="hover:bg-white/[0.02] transition-colors">
+              <td class="px-5 py-3 text-gray-300">Cost-to-Income Ratio</td>
+              <td class="text-right px-4 py-3 text-gray-400">44.4%</td>
+              <td class="text-right px-4 py-3 text-white font-medium">39.4%</td>
+              <td class="text-right px-4 py-3 text-success font-medium">-5.0pp</td>
+              <td class="text-right px-5 py-3 text-success font-medium">-11.3%</td>
+            </tr>
+            <tr class="hover:bg-white/[0.02] transition-colors">
+              <td class="px-5 py-3 text-gray-300">Provision for Losses</td>
+              <td class="text-right px-4 py-3 text-gray-400">45.0</td>
+              <td class="text-right px-4 py-3 text-white font-medium">55.0</td>
+              <td class="text-right px-4 py-3 text-danger font-medium">+10.0</td>
+              <td class="text-right px-5 py-3 text-danger font-medium">+22.2%</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="border-t-2 border-primary/30 bg-primary/5">
+              <td class="px-5 py-3 font-poppins font-bold text-white">Net Profit</td>
+              <td class="text-right px-4 py-3 font-medium text-gray-300">180.0</td>
+              <td class="text-right px-4 py-3 font-poppins font-bold text-primary text-base">245.0</td>
+              <td class="text-right px-4 py-3 font-bold text-success">+65.0</td>
+              <td class="text-right px-5 py-3 font-bold text-success">+36.1%</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center py-4 border-t border-border">
+      <p class="text-muted text-xs">Data sourced from internal banking systems. Report generated on April 22, 2026.</p>
+    </div>
+
+  </main>
+
+  <script type="text/babel">
+    const { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } = Recharts;
+
+    const tooltipStyle = {
+      background: '#12131F', border: '1px solid #1E2030', borderRadius: 10,
+      color: '#E5E7EB', fontSize: 12, padding: '10px 14px'
+    };
+    const axisStyle = { fill: '#6B7280', fontSize: 12 };
+    const axisStyleSm = { fill: '#6B7280', fontSize: 11 };
+
+    const revenueData = [
+      { month: 'Jan', rev2025: 125, rev2026: 152 },
+      { month: 'Feb', rev2025: 138, rev2026: 168 },
+      { month: 'Mar', rev2025: 142, rev2026: 175 }
+    ];
+    const revenueFormatter = (value, name) => [value + 'B VND', name === 'rev2026' ? '2026' : '2025'];
+
+    const RevenueChart = () => (
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart data={revenueData} barGap={4}>
+          <XAxis dataKey="month" tick={axisStyle} axisLine={false} tickLine={false} />
+          <YAxis tick={axisStyleSm} axisLine={false} tickLine={false} tickFormatter={v => v + 'B'} />
+          <Tooltip contentStyle={tooltipStyle} formatter={revenueFormatter} labelStyle={{ color: '#9CA3AF' }} />
+          <Bar dataKey="rev2025" fill="#374151" radius={[6, 6, 0, 0]} />
+          <Bar dataKey="rev2026" fill="#DF6B33" radius={[6, 6, 0, 0]} />
+        </BarChart>
+      </ResponsiveContainer>
+    );
+
+    const businessData = [
+      { name: 'Net Interest', y2025: 320, y2026: 395 },
+      { name: 'Non-Interest', y2025: 85,  y2026: 100 },
+      { name: 'Oper. Costs',  y2025: 180, y2026: 195 },
+      { name: 'Net Profit',   y2025: 180, y2026: 245 }
+    ];
+    const businessFormatter = (value, name) => [value + 'B VND', name === 'y2026' ? '2026' : '2025'];
+
+    const BusinessChart = () => (
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart layout="vertical" data={businessData} barGap={6}>
+          <XAxis type="number" tick={axisStyleSm} axisLine={false} tickLine={false} tickFormatter={v => v + 'B'} />
+          <YAxis type="category" dataKey="name" tick={{ fill: '#9CA3AF', fontSize: 12 }} axisLine={false} tickLine={false} width={80} />
+          <Tooltip contentStyle={tooltipStyle} formatter={businessFormatter} labelStyle={{ color: '#9CA3AF' }} />
+          <Bar dataKey="y2025" fill="#374151" radius={[0, 4, 4, 0]} />
+          <Bar dataKey="y2026" fill="#DF6B33" radius={[0, 4, 4, 0]} />
+        </BarChart>
+      </ResponsiveContainer>
+    );
+
+    function renderAll() {
+      const root = ReactDOM.createRoot(document.getElementById('chart-revenue'));
+      root.render(<RevenueChart />);
+
+      const root2 = ReactDOM.createRoot(document.getElementById('chart-business'));
+      root2.render(<BusinessChart />);
+
+      lucide.createIcons();
+    }
+
+    if (window.Recharts) {
+      renderAll();
+    } else {
+      document.addEventListener('recharts-ready', renderAll);
+    }
+  </script>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
